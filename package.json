@@ -55,7 +55,9 @@
     "make-deploy-bundle": "bash scripts/bundleUpdate.sh",
     "generate-webpack-stats-file": "EXPO_PUBLIC_GENERATE_STATS=1 yarn build-web",
     "open-analyzer": "EXPO_PUBLIC_OPEN_ANALYZER=1 yarn build-web",
-    "icons:optimize": "svgo -f ./assets/icons"
+    "icons:optimize": "svgo -f ./assets/icons",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "@atproto/api": "^0.14.20",
@@ -222,6 +224,7 @@
     "@expo/config-plugins": "9.0.10",
     "@lingui/cli": "^4.14.1",
     "@lingui/macro": "^4.14.1",
+    "@playwright/test": "^1.51.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "@react-native/eslint-config": "^0.76.2",
     "@react-native/typescript-config": "^0.76.1",
