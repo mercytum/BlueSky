@@ -8,10 +8,10 @@ export default defineConfig({
   },
   use: {
     headless: true,
-    baseURL: 'http://localhost:19006', // where the app is running
+    baseURL: 'https://bsky.app/', // where the app is running
     trace: 'on-first-retry',
   },
-  reporter: 'html',
+  reporter: [['html'], ['allure-playwright', {outputFolder: 'allure-results'}]],
   projects: [
     {
       name: 'Chromium',

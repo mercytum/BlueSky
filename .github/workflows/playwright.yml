@@ -34,8 +34,13 @@ jobs:
       - name: ⏱ Wait for app to be ready
         uses: jakejarvis/wait-action@v0.1.1
         with:
-          url: http://localhost:19006
+          url: https://bsky.app/
           timeout: 60
 
       - name: 🧪 Run Playwright tests
         run: yarn test:e2e
+
+      - name: Generate Allure report
+        run: |
+          yarn allure generate allure-results --clean
+          yarn allure open allure-report

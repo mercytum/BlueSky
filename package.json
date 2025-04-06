@@ -57,7 +57,9 @@
     "open-analyzer": "EXPO_PUBLIC_OPEN_ANALYZER=1 yarn build-web",
     "icons:optimize": "svgo -f ./assets/icons",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
   },
   "dependencies": {
     "@atproto/api": "^0.14.20",
@@ -242,6 +244,8 @@
     "@types/react-test-renderer": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
+    "allure-commandline": "^2.33.0",
+    "allure-playwright": "^3.2.1",
     "babel-jest": "^29.7.0",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-module-resolver": "^5.0.2",

@@ -2,6 +2,10 @@
 #
 .DS_Store
 
+# Allure reports
+allure-report/
+allure-results/
+
 # Xcode
 #
 build/
