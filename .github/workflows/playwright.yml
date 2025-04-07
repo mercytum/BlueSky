@@ -27,9 +27,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: 🚀 Start the app
-        run: yarn web &
-        env:
-          BROWSER: none
+        run: yarn web 
 
       - name: Run Playwright tests
         run: npx playwright test
