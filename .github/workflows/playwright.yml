@@ -39,9 +39,7 @@ jobs:
           timeout: 60
 
       - name: 🧪 Run Playwright tests with coverage
-        run: |
-          mkdir -p coverage
-          npx playwright test
+        run: yarn test:e2e
 
       - name: Generate Allure Report
         run: yarn allure:generate
