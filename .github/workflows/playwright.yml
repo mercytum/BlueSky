@@ -41,7 +41,7 @@ jobs:
       - name: 🧪 Run Playwright tests with coverage
         run: |
           mkdir -p coverage
-          npx playwright test --project=coverage
+          npx playwright test
 
       - name: Generate Allure Report
         run: yarn allure:generate
