@@ -26,10 +26,10 @@ jobs:
       - name: 🎭 Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: 🚀 Start the app
-        run: yarn web &
-        env:
-          BROWSER: chromium
+      - name: Start the web app using yarn web
+        run: |
+          yarn web &
+         
 
       - name: ⏱ Wait for app to be ready
         uses: jakejarvis/wait-action@v0.1.1
