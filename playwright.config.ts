@@ -8,7 +8,7 @@ export default defineConfig({
   },
   use: {
     headless: true,
-    baseURL: 'https://bsky.app/', // where the app is running
+    baseURL: 'http://localhost:19006/', // where the app is running
     trace: 'on-first-retry',
   },
   reporter: [['html'], ['allure-playwright', {outputFolder: 'allure-results'}]],
