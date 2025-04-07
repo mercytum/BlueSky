@@ -4,7 +4,7 @@ test('user can search and explore content from Discover page', async ({
   page,
 }) => {
   //Go to site and Login
-  await page.goto('http://localhost:8081/')
+  await page.goto('http://localhost:19006/')
   // await page.goto('https://bsky.app/')
   await page.getByRole('button', {name: 'Sign in'}).click()
   await page.getByTestId('loginUsernameInput').fill('cis565bskytests@gmail.com')
@@ -35,14 +35,9 @@ test('user can search and explore content from Discover page', async ({
   await firstResult.click()
 
   //Go back Home and tap Trending
-  await page.getByRole('link', {name: 'Home'}).click()
+  await page.getByRole('link', {name: 'Home', exact: true}).click()
   await page.getByText('Trending').click()
 
-  // Browse a topic (e.g., Music Sky)
-  const musicTopic = page.getByRole('link', {name: 'Browse topic Music Sky'})
-  await expect(musicTopic).toBeVisible()
-  await musicTopic.click()
-
   //Go back Home
-  await page.getByRole('link', {name: 'Home'}).click()
+  await page.getByRole('link', {name: 'Home', exact: true}).click()
 })

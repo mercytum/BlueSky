@@ -29,12 +29,12 @@ jobs:
       - name: 🚀 Start the app
         run: yarn web &
         env:
-          BROWSER: none
+          BROWSER: chromium
 
       - name: ⏱ Wait for app to be ready
         uses: jakejarvis/wait-action@v0.1.1
         with:
-          url: http://localhost:8081/  # Updated to the correct port
+          url: http://localhost:19006/  # Updated to the correct port
           timeout: 120  # Increased timeout
 
       - name: Run Playwright tests

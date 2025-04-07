@@ -2,7 +2,7 @@ import {expect, test} from '@playwright/test'
 
 test('user can follow and unfollow mercytum', async ({page}) => {
   //Go to site and Login
-  await page.goto('http://localhost:8081/')
+  await page.goto('http://localhost:19006/')
   // await page.goto('https://bsky.app/')
   await page.getByRole('button', {name: 'Sign in'}).click()
   await page.getByTestId('loginUsernameInput').click()
@@ -30,7 +30,7 @@ test('user can follow and unfollow mercytum', async ({page}) => {
   await expect(page.getByTestId('unfollowBtn')).toBeVisible()
 
   //Navigate back Home
-  await page.getByRole('link', {name: 'Home'}).click()
+  await page.getByRole('link', {name: 'Home', exact: true}).click()
 
   //Check if user is in your Following list
   await page.getByTestId('homeScreenFeedTabs-Following').click()
@@ -40,5 +40,5 @@ test('user can follow and unfollow mercytum', async ({page}) => {
 
   //Unfollow user
   await page.getByTestId('unfollowBtn').click()
-  await page.getByRole('link', {name: 'Home'}).click()
+  await page.getByRole('link', {name: 'Home', exact: true}).click()
 })
