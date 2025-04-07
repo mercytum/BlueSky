@@ -56,7 +56,7 @@
     "generate-webpack-stats-file": "EXPO_PUBLIC_GENERATE_STATS=1 yarn build-web",
     "open-analyzer": "EXPO_PUBLIC_OPEN_ANALYZER=1 yarn build-web",
     "icons:optimize": "svgo -f ./assets/icons",
-    "test:e2e": "npx playwright test --project=coverage",
+    "test:e2e": "npx playwright test",
     "test:e2e:ui": "playwright test --ui",
     "allure:generate": "allure generate allure-results --clean",
     "allure:open": "allure open allure-report",
