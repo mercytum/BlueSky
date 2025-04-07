@@ -41,9 +41,8 @@ jobs:
           url: http://localhost:19006/
           timeout: 60
 
-      - name: Run Playwright tests in headful mode with Xvfb
-        run: |
-            xvfb-run -a npx playwright test --headless=false
+      - name: Run Playwright tests with a graphical UI
+        run: xvfb-run -a npx playwright test
 
       - name: Generate Allure Report
         run: yarn allure:generate
