@@ -26,20 +26,24 @@ jobs:
       - name: 🎭 Install Playwright browsers
         run: npx playwright install --with-deps
 
+      - name: Setup Xvfb
+        run: sudo apt-get install -y xvfb
+
       - name: 🚀 Start the app
         run: yarn web &
         env:
           BROWSER: none
-        # Wait for the app to be ready
 
+        # Wait for the app to be ready
       - name: ⏱ Wait for app to be ready
         uses: jakejarvis/wait-action@v0.1.1
         with:
           url: http://localhost:19006/
           timeout: 60
 
-      - name: 🧪 Run Playwright tests with coverage
-        run: yarn test:e2e
+      - name: Run Playwright tests in headful mode with Xvfb
+        run: |
+            xvfb-run -a npx playwright test --headless=false
 
       - name: Generate Allure Report
         run: yarn allure:generate
@@ -61,3 +65,9 @@ jobs:
         with:
           name: coverage-report
           path: coverage.tar.gz
+
+      - name: Upload Playwright videos
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-videos
+          path: videos/
