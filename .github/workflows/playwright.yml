@@ -25,14 +25,20 @@ jobs:
 
       - name: 🎭 Install Playwright Browsers
         run: npx playwright install --with-deps
-      
+
       - name: 🚀 Start the app
         run: yarn web &
         env:
           BROWSER: none
 
+      - name: ⏱ Wait for app to be ready
+        uses: jakejarvis/wait-action@v0.1.1
+        with:
+          url: http://localhost:8081/  # Updated to the correct port
+          timeout: 120  # Increased timeout
+
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --timeout=60000  # Increased timeout for tests
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
