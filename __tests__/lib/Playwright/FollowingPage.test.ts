@@ -2,7 +2,7 @@ import {expect, test} from '@playwright/test'
 
 test('user can follow and unfollow mercytum', async ({page}) => {
   //Go to site and Login
-  await page.goto('http://localhost:19006/')
+  await page.goto('http://localhost:8081/')
   // await page.goto('https://bsky.app/')
   await page.getByRole('button', {name: 'Sign in'}).click()
   await page.getByTestId('loginUsernameInput').click()

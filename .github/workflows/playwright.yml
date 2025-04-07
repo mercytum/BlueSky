@@ -38,7 +38,7 @@ jobs:
           timeout: 120  # Increased timeout
 
       - name: Run Playwright tests
-        run: npx playwright test --timeout=60000  # Increased timeout for tests
+        run: npx playwright test 
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}

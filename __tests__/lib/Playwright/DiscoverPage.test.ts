@@ -4,7 +4,7 @@ test('user can search and explore content from Discover page', async ({
   page,
 }) => {
   //Go to site and Login
-  await page.goto('http://localhost:19006/')
+  await page.goto('http://localhost:8081/')
   // await page.goto('https://bsky.app/')
   await page.getByRole('button', {name: 'Sign in'}).click()
   await page.getByTestId('loginUsernameInput').fill('cis565bskytests@gmail.com')
