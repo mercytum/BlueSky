@@ -31,11 +31,5 @@ jobs:
         env:
           BROWSER: none
 
-      - name: ⏱ Wait for app to be ready
-        uses: jakejarvis/wait-action@v0.1.1
-        with:
-          url: http://localhost:19006/
-          timeout: 60
-
       - name: Run Playwright tests
         run: npx playwright test
