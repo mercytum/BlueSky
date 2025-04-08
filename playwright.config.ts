@@ -77,7 +77,8 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000, // 2 minutes
     env: {
-      COVERAGE: 'true', // 👈 necessary for coverage instrumentation
+      ...process.env,
+      COVERAGE: 'true', // 👈 Ensure coverage gets collected in GitHub Actions
     },
   },
 })
