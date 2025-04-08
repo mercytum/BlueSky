@@ -13,7 +13,6 @@ jobs:
 
     env:
       CI: true  # 👈 prevents Expo from being interactive
-      COVERAGE: true
 
     steps:
       - name: 📥 Checkout code
