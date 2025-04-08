@@ -1,13 +1,15 @@
+import react from '@vitejs/plugin-react'
+import {defineConfig} from 'vite'
 import istanbul from 'vite-plugin-istanbul'
 
-export default {
+export default defineConfig({
   plugins: [
+    react(),
     istanbul({
-      include: 'src/*',
+      include: 'src/**/*',
       exclude: ['node_modules', 'test/'],
-      extension: ['.js', '.ts', '.vue', '.svelte'],
-      cypress: true,
-      requireEnv: false,
+      extension: ['.ts', '.tsx'],
+      requireEnv: true,
     }),
   ],
-}
+})
