@@ -14,7 +14,7 @@
     "android:prod": "expo run:android --variant release",
     "android:profile": "BSKY_PROFILE=1 expo run:android --variant release",
     "ios": "expo run:ios",
-    "web": "expo start --web",
+    "web": "COVERAGE=true start --web",
     "use-build-number": "./scripts/useBuildNumberEnv.sh",
     "use-build-number-with-bump": "./scripts/useBuildNumberEnvWithBump.sh",
     "build-web": "expo export:web && node ./scripts/post-web-build.js",
