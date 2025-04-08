@@ -13,21 +13,27 @@ test.beforeEach(async ({ page }) => {
 
 test('Register With No Credentials', async ({ page }) => {
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
-    await expect(page.getByText('Please enter your email.')).toHaveText('Please enter your email.'); // Find the error message and then assert on it
+    const ExpectedText = 'Please enter your email.';
+    const LocatorText = page.getByText(ExpectedText);
+    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
 })
 
 test('Register With Only Email (valid)', async ({ page }) => {
     await page.getByTestId('emailInput').click(); // Click the email input field
     await page.getByTestId('emailInput').fill('test@gmail.com'); // Fill the email field
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
-    await expect(page.getByText('Please choose your password.')).toHaveText('Please choose your password.'); // Find the error message and then assert on it
+    const ExpectedText = 'Please choose your password.';
+    const LocatorText = page.getByText(ExpectedText);
+    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
 })
 
 test('Register With Only Email (invalid)', async ({ page }) => {
     await page.getByTestId('emailInput').click(); // Click the email input field
     await page.getByTestId('emailInput').fill('test'); // Fill the email field
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
-    await expect(page.getByText('Your email appears to be invalid.')).toHaveText('Your email appears to be invalid.'); // Find the error message and then assert on it
+    const ExpectedText = 'Your email appears to be invalid.';
+    const LocatorText = page.getByText(ExpectedText);
+    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
 })
 
 test('Register With Valid Email, Short Password)', async ({ page }) => {
@@ -36,7 +42,9 @@ test('Register With Valid Email, Short Password)', async ({ page }) => {
     await page.getByTestId('passwordInput').click(); // Click the password input field
     await page.getByTestId('passwordInput').fill('123456'); // Fill the password with 7 characters (minimum is 8)
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
-    await expect(page.getByText('Your password must be at least 8 characters long.')).toHaveText('Your password must be at least 8 characters long.'); // Find the error message and then assert on it
+    const ExpectedText = 'Your password must be at least 8 characters long.';
+    const LocatorText = page.getByText(ExpectedText);
+    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
 })
 
 test('Register With Valid Email, Good Password)', async ({ page }) => {
@@ -45,14 +53,18 @@ test('Register With Valid Email, Good Password)', async ({ page }) => {
     await page.getByTestId('passwordInput').click(); // Click the password input field
     await page.getByTestId('passwordInput').fill('123456'); // Fill the password with 7 characters (minimum is 8)
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to trigger an attempt at registering
-    await expect(page.getByText('Your password must be at least 8 characters long.')).toHaveText('Your password must be at least 8 characters long.'); // Find the error message and then assert on it
+    const ExpectedText = 'Your password must be at least 8 characters long.';
+    const LocatorText = page.getByText(ExpectedText);
+    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
 })
 
 test('Register With Birth Date Under 13 Years)', async ({ page }) => {
     const today = new Date();
     await page.getByTestId('date').click(); // Click the birth date input field
     await page.getByTestId('date').type(today.toLocaleDateString('en-us')); // Type the date into the field (fill did not work here to sdoing a keyboard input instead)
-    await expect(page.getByText('You must be 13 years of age or older to sign up.')).toHaveText('You must be 13 years of age or older to sign up.'); // Find the error message and then assert on it
+    const ExpectedText = 'You must be 13 years of age or older to sign up.';
+    const LocatorText = page.getByText(ExpectedText);
+    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
 })
 
 test('Register Step 1 Valid)', async ({ page }) => {
@@ -83,7 +95,9 @@ test('Register Step 1 Valid, Step 2 Handle Already Taken)', async ({ page }) => 
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
     await page.locator("input.css-11aywtz").fill(BSKY_HANDLE); // Locator is placed on the input box for the handle
     await page.getByRole('button', {name: 'Next'}).click(); // Click the next button to trigger an attempt at completeing step 2
-    await expect(page.getByText('That handle is already taken.')).toHaveText('That handle is already taken.'); // Find the error message and then assert on it
+    const ExpectedText = 'That handle is already taken.';
+    const LocatorText = page.getByText(ExpectedText);
+    await expect(LocatorText).toHaveText(ExpectedText); // Find the error message and then assert on it
 })
 
 test('Register Step 1 Valid, Step 2 Handle Less Than 3 Characters)', async ({ page }) => {
@@ -133,5 +147,7 @@ test('Register Step 1 Valid, Step 2 Good Handle)', async ({ page }) => {
     await page.getByRole('button', {name: 'Next'}).click() // Click the next button to complete step 1
     await page.locator("input.css-11aywtz").fill(GOOD_HANDLE); // Locator is placed on the input box for the handle
     await page.getByRole('button', {name: 'Next'}).click(); // Click the next button to trigger an attempt at registering
-    await expect(page.getByText("Complete the challenge")).toHaveText("Complete the challenge"); // Find Next button should not be enabled without correct handle size
+    const ExpectedText = "Complete the challenge";
+    const LocatorText = page.getByText(ExpectedText);
+    await expect(LocatorText).toHaveText(ExpectedText); // Find Next button should not be enabled without correct handle size
 })
