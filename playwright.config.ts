@@ -72,7 +72,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'yarn web',
+    command: 'npx expo start --web --non-interactive --port 19006',
     url: 'http://localhost:19006/',
     reuseExistingServer: !process.env.CI,
   },
