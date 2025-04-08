@@ -9,6 +9,7 @@ export default defineConfig({
       include: 'src/**/*',
       exclude: ['node_modules', 'test/'],
       extension: ['.ts', '.tsx'],
+      cypress: true,
       requireEnv: true,
     }),
   ],

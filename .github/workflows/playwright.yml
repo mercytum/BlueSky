@@ -13,6 +13,7 @@ jobs:
 
     env:
       CI: true
+      COVERAGE: 'true'  # 👈 necessary for code coverage instrumentation
 
     steps:
       - name: 📥 Checkout code
@@ -52,6 +53,11 @@ jobs:
       - name: 📊 Generate code coverage report
         run: |
           npx nyc report --reporter=html
+        if: ${{ always() }}
+      
+      - name: 📊 Check coverage directory before upload
+        run: |
+          ls -al coverage/
         if: ${{ always() }}
 
       - name: ⬆️ Upload coverage report
