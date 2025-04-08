@@ -11,6 +11,9 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
 
+    env:
+      CI: true  # 👈 prevents Expo from being interactive
+
     steps:
       - name: 📥 Checkout code
         uses: actions/checkout@v4
@@ -26,7 +29,7 @@ jobs:
       - name: 🎭 Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: 🧪 Run Playwright Tests
+      - name: 🧪 Run Playwright tests (starts dev server from config)
         run: npx playwright test
 
       - uses: actions/upload-artifact@v4
