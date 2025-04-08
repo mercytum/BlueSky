@@ -72,13 +72,12 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'yarn web',
+    command: 'COVERAGE=true yarn web',
     url: 'http://localhost:19006',
     reuseExistingServer: !process.env.CI,
     timeout: 120 * 1000, // 2 minutes
     env: {
-      ...process.env,
-      COVERAGE: 'true', // 👈 Ensure coverage gets collected in GitHub Actions
+      COVERAGE: 'true', // 👈 necessary for coverage instrumentation
     },
   },
 })
