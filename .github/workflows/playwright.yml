@@ -71,6 +71,13 @@ jobs:
         run: |
           npx allure generate allure-results --clean -o allure-report
 
+      - name: ⬆️ Upload Allure results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results/
+          retention-days: 30
+
       - name: ⬆️ Upload Allure report
         uses: actions/upload-artifact@v4
         with:
