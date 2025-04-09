@@ -1,4 +1,4 @@
-name: Build & Test Bluesky Social Using Playwright
+name: Test Search & Post Using Playwright
 
 # Triggers
 on:
@@ -10,7 +10,7 @@ on:
 jobs:
   # First Job: Build Workflow
   build:
-    name: Build BlueSky Web App
+    name: Test Search & Post Functionality
     # Will automatically cancel workflow after 1 hour of running
     timeout-minutes: 60
     # Run Workflow using Ubuntu latest OS
@@ -27,6 +27,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20' # Use Node.js v20
+
+        # Setup npm dependencies using clean install
+      - name: Setup npm
+        run: npm ci
 
         # Install Playwright browsers (i.e. Chromium, Webkit, Firefox) with dependencies
       - name: Install Playwright Browsers & Dependencies
