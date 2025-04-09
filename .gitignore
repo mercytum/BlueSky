@@ -2,9 +2,11 @@
 #
 .DS_Store
 
-# Allure reports
+# Allure and Playwright reports
 allure-report/
 allure-results/
+test-results/
+playwright-report/
 
 # Xcode
 #
