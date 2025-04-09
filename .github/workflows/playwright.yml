@@ -30,7 +30,7 @@ jobs:
 
         # Setup npm dependencies using clean install
       - name: Setup npm
-        run: npm ci
+        run: npm
 
         # Install Playwright browsers (i.e. Chromium, Webkit, Firefox) with dependencies
       - name: Install Playwright Browsers & Dependencies
