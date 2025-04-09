@@ -1,50 +1,46 @@
-name: Run Playwright tests
+name: Build & Test Bluesky Social Using Playwright
 
+# Triggers
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    # Trigger CI/CD pipeline automation whenever new changes are 'push' to 'playwrighttests/alistair' branch
+    branches: [ playwrighttests/alistair ]
 
+# Define Automated Jobs & Steps
 jobs:
-  test:
-    timeout-minutes: 15
+  # First Job: Build Workflow
+  build:
+    name: Build BlueSky Web App
+    # Will automatically cancel workflow after 1 hour of running
+    timeout-minutes: 60
+    # Run Workflow using Ubuntu latest OS
     runs-on: ubuntu-latest
 
+    # Step Definitions
     steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v3
+        # Checkout the latest code from the main repo
+      - name: Checkout Git Repository
+        uses: actions/checkout@v4
 
-      - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v3
+        # Setup Node.js required environment using v20
+      - name: Setup Node.js 
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20' # Use Node.js v20
 
-      - name: 📦 Install dependencies
-        run: yarn install
-
-      - name: 🎭 Install Playwright browsers
+        # Install Playwright browsers (i.e. Chromium, Webkit, Firefox) with dependencies
+      - name: Install Playwright Browsers & Dependencies
         run: npx playwright install --with-deps
 
-      - name: 🚀 Start the app
-        run: yarn web &
-        env:
-          BROWSER: none
-        # Wait for the app to be ready
-      - name: ⏱ Wait for app to be ready
-        uses: jakejarvis/wait-action@v0.1.1
-        with:
-          url: https://bsky.app/
-          timeout: 60
+      # Run the playwright login test scripts
+      - name: Run Playwright Tests
+        run: xvfb-run npx playwright test --grep @search
 
-      - name: 🧪 Run Playwright tests
-        run: yarn test:e2e
-
-      - name: Generate Allure Report
-        run: yarn allure:generate
-
-      - name: Upload Allure Report
+        # Upload the test scripts results if the job was not cancelled. Keep report for 30 days
+      - name: Upload Test Results
         uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: allure-report
-          path: allure-report
+          name: playwright-search-report
+          path: playwright-report/
+          retention-days: 30
