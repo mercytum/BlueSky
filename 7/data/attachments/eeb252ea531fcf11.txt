@@ -1,0 +1,758 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: user can search and explore content from Discover page
+- Location: /home/runner/work/BlueSky/BlueSky/__tests__/lib/Playwright/DiscoverPage.test.ts:3:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('link', { name: 'Home', exact: true })
+    - locator resolved to <a href="/" role="link" tabindex="0" aria-label="Home" data-no-underline="1" class="css-view-175oi2r r-cursor-1loqt21 r-touchAction-1otgn73">…</a>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    33 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <iframe src="about:blank" id="react-refresh-overlay"></iframe> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+    at /home/runner/work/BlueSky/BlueSky/__tests__/lib/Playwright/DiscoverPage.test.ts:42:61
+```
+
+# Page snapshot
+
+```yaml
+- main:
+  - img
+  - link "View your feeds and explore more":
+    - img
+  - tablist:
+    - tab "Discover"
+    - tab "Following"
+  - 'link "Hend Amry''s avatar View profileView profile · April 10, 2025 at 4:48 AM Me, wary, to my hissing cat, with a medication syringe in my hand. @WhiteHouse: DO NOT RETALIATE AND YOU WILL BE REWARDED Reply (17 replies) Repost or quote post Like (322 likes) Open post options menu t-pets"':
+    - link "Hend Amry's avatar"
+    - link "View profile": ‪Hend Amry‬
+    - link "View profile": ‪@libyaliberty.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 4:48 AM": 48m
+    - text: Me, wary, to my hissing cat, with a medication syringe in my hand.
+    - 'img "@WhiteHouse: DO NOT RETALIATE AND YOU WILL BE REWARDED"'
+    - text: ALT
+    - button "Reply (17 replies)":
+      - img
+      - text: "17"
+    - button "Repost or quote post":
+      - img
+      - text: "48"
+    - button "Like (322 likes)":
+      - img
+      - text: "322"
+    - button "Open post options menu":
+      - img
+    - text: t-pets
+  - link "𝙹𝚊𝚢 𝙵 𝙰𝚛𝚗𝚘𝚕𝚍's avatar View profileView profile · April 10, 2025 at 3:56 AM Positively breathtaking. ❤️ Did you know we were never told the story of the birds and the bees? Myndstate on IG An error occurred while loading the video. Please try again. Retry Reply (9 replies) Repost or quote post Like (136 likes) Open post options menu t-nature":
+    - link "𝙹𝚊𝚢 𝙵 𝙰𝚛𝚗𝚘𝚕𝚍's avatar"
+    - link "View profile": ‪𝙹𝚊𝚢 𝙵 𝙰𝚛𝚗𝚘𝚕𝚍‬
+    - link "View profile": ‪@jayfarrellarnold.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 3:56 AM": 1h
+    - text: Positively breathtaking. ❤️ Did you know we were never told the story of the birds and the bees? Myndstate on IG An error occurred while loading the video. Please try again.
+    - button "Retry"
+    - button "Reply (9 replies)":
+      - img
+      - text: "9"
+    - button "Repost or quote post":
+      - img
+      - text: "51"
+    - button "Like (136 likes)":
+      - img
+      - text: "136"
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "chandlo hazard guy 🐻's avatar View profileView profile · April 9, 2025 at 4:45 PM Play a woman in a black tank top plays a guitar Reply (0 replies) Repost or quote post Like (33 likes) Open post options menu clusterv2:54540":
+    - link "chandlo hazard guy 🐻's avatar"
+    - link "View profile": ‪chandlo hazard guy 🐻‬
+    - link "View profile": ‪@hazardguy.bsky.social‬
+    - text: ·
+    - link "April 9, 2025 at 4:45 PM": 12h
+    - button "Play":
+      - img
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+      - text: "5"
+    - button "Like (33 likes)":
+      - img
+      - text: "33"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "PurpleKett(CdnMom)'s avatar View profileView profile · April 9, 2025 at 1:36 PM BTS not a family?! Every parent showed up to Hobi’s concert in Seoul. ++ BTS member Jhope on an empty stage in front of a mic, wearing a striped beanie, brown hoodie. Caption says all parents showed up yesterday. Not a single one missing. Reply (1 reply) Repost or quote post Like (57 likes) Open post options menu clusterv2:54540":
+    - link "PurpleKett(CdnMom)'s avatar"
+    - link "View profile": ‪PurpleKett(CdnMom)‬
+    - link "View profile": ‪@purplekett.bsky.social‬
+    - text: ·
+    - link "April 9, 2025 at 1:36 PM": 16h
+    - text: BTS not a family?! Every parent showed up to Hobi’s concert in Seoul. ++
+    - img "BTS member Jhope on an empty stage in front of a mic, wearing a striped beanie, brown hoodie. Caption says all parents showed up yesterday. Not a single one missing."
+    - text: ALT
+    - button "Reply (1 reply)":
+      - img
+      - text: "1"
+    - button "Repost or quote post":
+      - img
+      - text: "24"
+    - button "Like (57 likes)":
+      - img
+      - text: "57"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "Sunny's avatar View profileView profile · April 9, 2025 at 7:07 PM need a coke zero before the workday kills me where i stand Reply (1 reply) Repost or quote post Like (6 likes) Open post options menu clusterv2:54362":
+    - link "Sunny's avatar"
+    - link "View profile": ‪Sunny‬
+    - link "View profile": ‪@ukunduit.bsky.social‬
+    - text: ·
+    - link "April 9, 2025 at 7:07 PM": 10h
+    - text: need a coke zero before the workday kills me where i stand
+    - button "Reply (1 reply)":
+      - img
+      - text: "1"
+    - button "Repost or quote post":
+      - img
+    - button "Like (6 likes)":
+      - img
+      - text: "6"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - 'link "NPR''s avatar View profileView profile · April 9, 2025 at 4:19 PM Amy Sherald, who painted former First Lady Michelle Obama''s portrait in 2018, has a major survey of her work opening this week at the Whitney Museum of American Art in New York. Painter Amy Sherald asks: What is American? Reply (23 replies) Repost or quote post Like (1,053 likes) Open post options menu t-news"':
+    - link "NPR's avatar"
+    - link "View profile": ‪NPR‬
+    - link "View profile": ‪@npr.org‬
+    - text: ·
+    - link "April 9, 2025 at 4:19 PM": 13h
+    - text: Amy Sherald, who painted former First Lady Michelle Obama's portrait in 2018, has a major survey of her work opening this week at the Whitney Museum of American Art in New York.
+    - 'link "Painter Amy Sherald asks: What is American?"':
+      - img
+      - text: "Painter Amy Sherald asks: What is American? Amy Sherald, who painted former First Lady Michelle Obama's portrait in 2018, has a major survey of her work opening this week at the Whitney Museum of American Art in New York."
+      - img
+      - text: www.npr.org
+    - button "Reply (23 replies)":
+      - img
+      - text: "23"
+    - button "Repost or quote post":
+      - img
+      - text: "157"
+    - button "Like (1,053 likes)":
+      - img
+      - text: 1K
+    - button "Open post options menu":
+      - img
+    - text: t-news
+  - link "Cookies (nintendo era) ☘️🧸's avatar View profileView profile · April 9, 2025 at 1:21 PM If you’re choosing to be a mean girl please re evaluate your life 🫶 Reply (4 replies) Repost or quote post Like (84 likes) Open post options menu clusterv2:54540":
+    - link "Cookies (nintendo era) ☘️🧸's avatar"
+    - link "View profile": ‪Cookies (nintendo era) ☘️🧸‬
+    - link "View profile": ‪@rosie.posts.love‬
+    - text: ·
+    - link "April 9, 2025 at 1:21 PM": 16h
+    - text: If you’re choosing to be a mean girl please re evaluate your life 🫶
+    - button "Reply (4 replies)":
+      - img
+      - text: "4"
+    - button "Repost or quote post":
+      - img
+      - text: "2"
+    - button "Like (84 likes)":
+      - img
+      - text: "84"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "Breezie's avatar View profileView profile · April 10, 2025 at 4:52 AM time to move on A curving road in the country. A tree to the right and open fields all over. There are dark clouds. Reply (3 replies) Repost or quote post Like (35 likes) Open post options menu t-photography":
+    - link "Breezie's avatar"
+    - link "View profile": ‪Breezie‬
+    - link "View profile": ‪@breeze420.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 4:52 AM": 44m
+    - text: time to move on
+    - img "A curving road in the country. A tree to the right and open fields all over. There are dark clouds."
+    - text: ALT
+    - button "Reply (3 replies)":
+      - img
+      - text: "3"
+    - button "Repost or quote post":
+      - img
+      - text: "7"
+    - button "Like (35 likes)":
+      - img
+      - text: "35"
+    - button "Open post options menu":
+      - img
+    - text: t-photography
+  - link "The Tennessee Holler 's avatar View profileView profile · April 10, 2025 at 4:01 AM Wha happened today would be treated as crime if they didn’t now also control all the law enforcement agencies Reply (64 replies) Repost or quote post Like (1,904 likes) Open post options menu nettop":
+    - link "The Tennessee Holler 's avatar"
+    - link "View profile": ‪The Tennessee Holler‬
+    - link "View profile": ‪@thetnholler.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 4:01 AM": 1h
+    - text: Wha happened today would be treated as crime if they didn’t now also control all the law enforcement agencies
+    - button "Reply (64 replies)":
+      - img
+      - text: "64"
+    - button "Repost or quote post":
+      - img
+      - text: "674"
+    - button "Like (1,904 likes)":
+      - img
+      - text: 1.9K
+    - button "Open post options menu":
+      - img
+    - text: nettop
+  - link "Bloomberg News's avatar View profileView profile · April 10, 2025 at 4:35 AM Singapore’s Changi regained the title of world’s best airport in 2025, edging out Doha’s Hamad International, which took the number one spot last year. See the full list ⤵ These Are the World’s Best Airports in 2025 Reply (5 replies) Repost or quote post Like (46 likes) Open post options menu t-news":
+    - link "Bloomberg News's avatar"
+    - link "View profile": ‪Bloomberg News‬
+    - link "View profile": ‪@bloomberg.com‬
+    - text: ·
+    - link "April 10, 2025 at 4:35 AM": 1h
+    - text: Singapore’s Changi regained the title of world’s best airport in 2025, edging out Doha’s Hamad International, which took the number one spot last year. See the full list ⤵
+    - link "These Are the World’s Best Airports in 2025":
+      - img
+      - text: These Are the World’s Best Airports in 2025 Singapore’s Changi regained the title of world’s best airport in 2025, edging out Doha’s Hamad International, which took the number one spot last year.
+      - img
+      - text: www.bloomberg.com
+    - button "Reply (5 replies)":
+      - img
+      - text: "5"
+    - button "Repost or quote post":
+      - img
+      - text: "8"
+    - button "Like (46 likes)":
+      - img
+      - text: "46"
+    - button "Open post options menu":
+      - img
+    - text: t-news
+  - link "Samwise Gamgee (Official)'s avatar View profileView profile · April 10, 2025 at 4:27 AM A cropped selfie of me in golden hour light screenshotted from the camera preview, it has the grid lines overlaid on top. Reply (5 replies) Repost or quote post Like (182 likes) Open post options menu t-art":
+    - link "Samwise Gamgee (Official)'s avatar"
+    - link "View profile": ‪Samwise Gamgee (Official)‬
+    - link "View profile": ‪@boyonboy.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 4:27 AM": 1h
+    - img "A cropped selfie of me in golden hour light screenshotted from the camera preview, it has the grid lines overlaid on top."
+    - text: ALT
+    - button "Reply (5 replies)":
+      - img
+      - text: "5"
+    - button "Repost or quote post":
+      - img
+      - text: "4"
+    - button "Like (182 likes)":
+      - img
+      - text: "182"
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "Anthony Slater's avatar View profileView profile · April 10, 2025 at 4:31 AM Harrison Barnes fadeaway wing 3 at the buzzer to deliver the Warriors a potentially crucial loss depending how the rest of the week plays out. Could send them to the play-in bracket. Reply (15 replies) Repost or quote post Like (102 likes) Open post options menu t-sports":
+    - link "Anthony Slater's avatar"
+    - link "View profile": ‪Anthony Slater‬
+    - link "View profile": ‪@anthonyvslater.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 4:31 AM": 1h
+    - text: Harrison Barnes fadeaway wing 3 at the buzzer to deliver the Warriors a potentially crucial loss depending how the rest of the week plays out. Could send them to the play-in bracket.
+    - button "Reply (15 replies)":
+      - img
+      - text: "15"
+    - button "Repost or quote post":
+      - img
+      - text: "23"
+    - button "Like (102 likes)":
+      - img
+      - text: "102"
+    - button "Open post options menu":
+      - img
+    - text: t-sports
+  - link "daily bunnies 🐇✨'s avatar View profileView profile · April 9, 2025 at 12:32 AM Reply (41 replies) Repost or quote post Like (4,077 likes) Open post options menu t-animals":
+    - link "daily bunnies 🐇✨'s avatar"
+    - link "View profile": ‪daily bunnies 🐇✨‬
+    - link "View profile": ‪@dailybunnies.bsky.social‬
+    - text: ·
+    - link "April 9, 2025 at 12:32 AM": 1d
+    - button "Reply (41 replies)":
+      - img
+      - text: "41"
+    - button "Repost or quote post":
+      - img
+      - text: "336"
+    - button "Like (4,077 likes)":
+      - img
+      - text: 4K
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "BazmanAEW's avatar View profileView profile · April 10, 2025 at 2:08 AM Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Hashtag AEWDynamite 🤼 Reply (0 replies) Repost or quote post Like (9 likes) Open post options menu ntpc:3000151":
+    - link "BazmanAEW's avatar"
+    - link "View profile": ‪BazmanAEW‬
+    - link "View profile": ‪@bazmanaew.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 2:08 AM": 3h
+    - text: Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe Joe
+    - link "Hashtag AEWDynamite": "#AEWDynamite"
+    - text: 🤼
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+    - button "Like (9 likes)":
+      - img
+      - text: "9"
+    - button "Open post options menu":
+      - img
+    - text: ntpc:3000151
+  - link "John Scalzi's avatar View profileView profile · April 9, 2025 at 6:54 PM Doing the proofs of the upcoming novel and I caught a major continuity error between this book and one of the earlier books in the Old Man's War series, and now that I fixed it none of you will ever know what it is, that's the magic of proofreading Reply (94 replies) Repost or quote post Like (2,331 likes) Open post options menu t-books":
+    - link "John Scalzi's avatar"
+    - link "View profile": ‪John Scalzi‬
+    - link "View profile": ‪@scalzi.com‬
+    - text: ·
+    - link "April 9, 2025 at 6:54 PM": 10h
+    - text: Doing the proofs of the upcoming novel and I caught a major continuity error between this book and one of the earlier books in the Old Man's War series, and now that I fixed it none of you will ever know what it is, that's the magic of proofreading
+    - button "Reply (94 replies)":
+      - img
+      - text: "94"
+    - button "Repost or quote post":
+      - img
+      - text: "60"
+    - button "Like (2,331 likes)":
+      - img
+      - text: 2.3K
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - 'link "kanokoga.bsky.social''s avatar View profileView profile · April 9, 2025 at 1:01 PM [Halo3] #44 Crow’s Nest(10) Reply (1 reply) Repost or quote post Like (75 likes) Open post options menu clusterv2:54540"':
+    - link "kanokoga.bsky.social's avatar"
+    - link "View profile": ‪kanokoga.bsky.social‬
+    - link "View profile": ‪@kanokoga.bsky.social‬
+    - text: ·
+    - link "April 9, 2025 at 1:01 PM": 16h
+    - text: "[Halo3] #44 Crow’s Nest(10)"
+    - button "Reply (1 reply)":
+      - img
+      - text: "1"
+    - button "Repost or quote post":
+      - img
+      - text: "13"
+    - button "Like (75 likes)":
+      - img
+      - text: "75"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "Mike Henry's avatar View profileView profile · April 10, 2025 at 1:55 AM Blending in with the Ocotillos… Pyrrhuloxia 🪶☀️🌵 Male Desert Cardinal Reply (1 reply) Repost or quote post Like (217 likes) Open post options menu t-animals":
+    - link "Mike Henry's avatar"
+    - link "View profile": ‪Mike Henry‬
+    - link "View profile": ‪@onlyveesaz.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 1:55 AM": 3h
+    - text: Blending in with the Ocotillos… Pyrrhuloxia 🪶☀️🌵
+    - img "Male Desert Cardinal"
+    - text: ALT
+    - button "Reply (1 reply)":
+      - img
+      - text: "1"
+    - button "Repost or quote post":
+      - img
+      - text: "14"
+    - button "Like (217 likes)":
+      - img
+      - text: "217"
+    - button "Open post options menu":
+      - img
+    - text: t-animals
+  - link "Politico's avatar View profileView profile · April 9, 2025 at 2:37 PM State governments scramble to keep millions of people from losing health coverage if Congress lets federal funding for Obamacare expire at the end of the year. States seek lifeline to protect Obamacare’s federal subsidies Reply (67 replies) Repost or quote post Like (719 likes) Open post options menu t-news":
+    - link "Politico's avatar"
+    - link "View profile": ‪Politico‬
+    - link "View profile": ‪@politico.com‬
+    - text: ·
+    - link "April 9, 2025 at 2:37 PM": 14h
+    - text: State governments scramble to keep millions of people from losing health coverage if Congress lets federal funding for Obamacare expire at the end of the year.
+    - link "States seek lifeline to protect Obamacare’s federal subsidies":
+      - img
+      - text: States seek lifeline to protect Obamacare’s federal subsidies The looming possibility of slashing Medicaid spending and not extending ACA subsidies has prompted a legislative scramble from Sacramento to Annapolis.
+      - img
+      - text: www.politico.com
+    - button "Reply (67 replies)":
+      - img
+      - text: "67"
+    - button "Repost or quote post":
+      - img
+      - text: "339"
+    - button "Like (719 likes)":
+      - img
+      - text: "719"
+    - button "Open post options menu":
+      - img
+    - text: t-news
+  - link "Dave Bryant 🇪🇸 (FrostyVeldskoen)'s avatar View profileView profile · April 10, 2025 at 4:30 AM Why does Hashtag StickHappens when you find the best posing Long-tailed Tit? Hashtag birds A small bird with a looong tail (longer than its body) sits on a branch, sideways on to the viewer. It has a white chest, rosy belly, brown wings which are black edged and a tail that is black and white edged. Its tiny beak and mouse-like, round, black eye sit below a black capped head with a white go faster stripe running down the middle. The yellow top eyelid looks weird. Sadly a small out of focus branch cuts across the image and the birds head. The background is more thin branches, crisscrossing each other, with the occasional green shoot out of focus. Taken in Alicante province, Spain. Reply (7 replies) Repost or quote post Like (80 likes) Open post options menu t-nature":
+    - link "Dave Bryant 🇪🇸 (FrostyVeldskoen)'s avatar"
+    - link "View profile": ‪Dave Bryant 🇪🇸 (FrostyVeldskoen)‬
+    - link "View profile": ‪@davebspain.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 4:30 AM": 1h
+    - text: Why does
+    - link "Hashtag StickHappens": "#StickHappens"
+    - text: when you find the best posing Long-tailed Tit?
+    - link "Hashtag birds": "#birds"
+    - img "A small bird with a looong tail (longer than its body) sits on a branch, sideways on to the viewer. It has a white chest, rosy belly, brown wings which are black edged and a tail that is black and white edged. Its tiny beak and mouse-like, round, black eye sit below a black capped head with a white go faster stripe running down the middle. The yellow top eyelid looks weird. Sadly a small out of focus branch cuts across the image and the birds head. The background is more thin branches, crisscrossing each other, with the occasional green shoot out of focus. Taken in Alicante province, Spain."
+    - text: ALT
+    - button "Reply (7 replies)":
+      - img
+      - text: "7"
+    - button "Repost or quote post":
+      - img
+      - text: "6"
+    - button "Like (80 likes)":
+      - img
+      - text: "80"
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "Gountro's avatar View profileView profile · April 10, 2025 at 4:32 AM someone on here asked for my old nepeta art and I forgot to share it Image Image Reply (3 replies) Repost or quote post Like (135 likes) Open post options menu t-art":
+    - link "Gountro's avatar"
+    - link "View profile": ‪Gountro‬
+    - link "View profile": ‪@gountro.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 4:32 AM": 1h
+    - text: someone on here asked for my old nepeta art and I forgot to share it
+    - button "Image"
+    - button "Image"
+    - button "Reply (3 replies)":
+      - img
+      - text: "3"
+    - button "Repost or quote post":
+      - img
+      - text: "17"
+    - button "Like (135 likes)":
+      - img
+      - text: "135"
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "Mira🌺's avatar View profileView profile · April 9, 2025 at 11:42 AM Hear me out…🌺 Reply (86 replies) Repost or quote post Like (2,615 likes) Open post options menu t-nature":
+    - link "Mira🌺's avatar"
+    - link "View profile": ‪Mira🌺‬
+    - link "View profile": ‪@deepgreens.bsky.social‬
+    - text: ·
+    - link "April 9, 2025 at 11:42 AM": 17h
+    - text: Hear me out…🌺
+    - button "Reply (86 replies)":
+      - img
+      - text: "86"
+    - button "Repost or quote post":
+      - img
+      - text: "283"
+    - button "Like (2,615 likes)":
+      - img
+      - text: 2.6K
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "Canadian Bacon's avatar View profileView profile · April 9, 2025 at 12:03 PM I feel like I waste my time in a good way. Reply (6 replies) Repost or quote post Like (73 likes) Open post options menu clusterv2:54362":
+    - link "Canadian Bacon's avatar"
+    - link "View profile": ‪Canadian Bacon‬
+    - link "View profile": ‪@tashaneedshelp.bsky.social‬
+    - text: ·
+    - link "April 9, 2025 at 12:03 PM": 17h
+    - text: I feel like I waste my time in a good way.
+    - button "Reply (6 replies)":
+      - img
+      - text: "6"
+    - button "Repost or quote post":
+      - img
+      - text: "28"
+    - button "Like (73 likes)":
+      - img
+      - text: "73"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54362
+  - link "chai ♡ ˚₊⠀·'s avatar View profileView profile · April 9, 2025 at 6:06 PM i love mainstage making ur other band members in solo just ur locker skins bc now its just me and my other personalities in a band Reply (0 replies) Repost or quote post Like (13 likes) Open post options menu clusterv2:54540":
+    - link "chai ♡ ˚₊⠀·'s avatar"
+    - link "View profile": ‪chai ♡ ˚₊⠀·‬
+    - link "View profile": ‪@pecanchai.is.eepy.now‬
+    - text: ·
+    - link "April 9, 2025 at 6:06 PM": 11h
+    - text: i love mainstage making ur other band members in solo just ur locker skins bc now its just me and my other personalities in a band
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+    - button "Like (13 likes)":
+      - img
+      - text: "13"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "kallie🕷️ ♡.°'s avatar View profileView profile · April 9, 2025 at 12:37 PM gm small white fluffy moth peeking over a wooden fence Reply (9 replies) Repost or quote post Like (69 likes) Open post options menu clusterv2:54540":
+    - link "kallie🕷️ ♡.°'s avatar"
+    - link "View profile": ‪kallie🕷️ ♡.°‬
+    - link "View profile": ‪@beepzelbub.bsky.social‬
+    - text: ·
+    - link "April 9, 2025 at 12:37 PM": 16h
+    - text: gm
+    - img "small white fluffy moth peeking over a wooden fence"
+    - text: ALT
+    - button "Reply (9 replies)":
+      - img
+      - text: "9"
+    - button "Repost or quote post":
+      - img
+      - text: "3"
+    - button "Like (69 likes)":
+      - img
+      - text: "69"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "The New York Times's avatar View profileView profile · April 9, 2025 at 11:31 PM Neurologists recommend 10 simple habits to help your brain stay mentally sharp. 10 Small Things Neurologists Wish You’d Do for Your Brain Reply (26 replies) Repost or quote post Like (205 likes) Open post options menu t-news":
+    - link "The New York Times's avatar"
+    - link "View profile": ‪The New York Times‬
+    - link "View profile": ‪@nytimes.com‬
+    - text: ·
+    - link "April 9, 2025 at 11:31 PM": 6h
+    - text: Neurologists recommend 10 simple habits to help your brain stay mentally sharp.
+    - link "10 Small Things Neurologists Wish You’d Do for Your Brain":
+      - img
+      - text: 10 Small Things Neurologists Wish You’d Do for Your Brain Easy everyday habits can help keep you sharp. And it’s never too late to start them.
+      - img
+      - text: www.nytimes.com
+    - button "Reply (26 replies)":
+      - img
+      - text: "26"
+    - button "Repost or quote post":
+      - img
+      - text: "48"
+    - button "Like (205 likes)":
+      - img
+      - text: "205"
+    - button "Open post options menu":
+      - img
+    - text: t-news
+  - 'link "Twisteddoodles ''s avatar View profileView profile · April 9, 2025 at 8:34 AM In the interest of balance Hashtag news News reader at a desk. Transcribed Text: Left bubble: \"Next up we will discuss the topic with someone whose job is to be a well researched and respected expert in the area.\" Right bubble: \"And in the interest of balance we will also talk to an idiot.\" Reply (6 replies) Repost or quote post Like (5,383 likes) Open post options menu t-art"':
+    - link "Twisteddoodles 's avatar"
+    - link "View profile": ‪Twisteddoodles‬
+    - link "View profile": ‪@twisteddoodles.bsky.social‬
+    - text: ·
+    - link "April 9, 2025 at 8:34 AM": 21h
+    - text: In the interest of balance
+    - link "Hashtag news": "#news"
+    - 'img "News reader at a desk. Transcribed Text: Left bubble: \"Next up we will discuss the topic with someone whose job is to be a well researched and respected expert in the area.\" Right bubble: \"And in the interest of balance we will also talk to an idiot.\""'
+    - text: ALT
+    - button "Reply (6 replies)":
+      - img
+      - text: "6"
+    - button "Repost or quote post":
+      - img
+      - text: 1.2K
+    - button "Like (5,383 likes)":
+      - img
+      - text: 5.3K
+    - button "Open post options menu":
+      - img
+    - text: t-art
+  - link "Papa Woof und Krampus und Bleaken's avatar View profileView profile · April 9, 2025 at 4:51 PM Reply (73 replies) Repost or quote post Like (1,918 likes) Open post options menu t-nature":
+    - link "Papa Woof und Krampus und Bleaken's avatar"
+    - link "View profile": ‪Papa Woof und Krampus und Bleaken‬
+    - link "View profile": ‪@papawoof.bsky.social‬
+    - text: ·
+    - link "April 9, 2025 at 4:51 PM": 12h
+    - button "Reply (73 replies)":
+      - img
+      - text: "73"
+    - button "Repost or quote post":
+      - img
+      - text: "279"
+    - button "Like (1,918 likes)":
+      - img
+      - text: 1.9K
+    - button "Open post options menu":
+      - img
+    - text: t-nature
+  - link "gundampixel's avatar View profileView profile · April 10, 2025 at 4:35 AM It wouldn’t be a major new Gundam release if Newtype magazine didn’t go all in - and the latest issue (released today) includes a 16-page GQuuuuuuX feature. 🎉 Previews in the comments below if interested 👇 Reply (2 replies) Repost or quote post Like (83 likes) Open post options menu t-books":
+    - link "gundampixel's avatar"
+    - link "View profile": ‪gundampixel‬
+    - link "View profile": ‪@gundampixel.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 4:35 AM": 1h
+    - text: It wouldn’t be a major new Gundam release if Newtype magazine didn’t go all in - and the latest issue (released today) includes a 16-page GQuuuuuuX feature. 🎉 Previews in the comments below if interested 👇
+    - button "Reply (2 replies)":
+      - img
+      - text: "2"
+    - button "Repost or quote post":
+      - img
+      - text: "14"
+    - button "Like (83 likes)":
+      - img
+      - text: "83"
+    - button "Open post options menu":
+      - img
+    - text: t-books
+  - 'link "audrey''s avatar View profileView profile · April 9, 2025 at 4:33 PM daily lee know theme: mood stray kids lee know ALT stray kids lee know ALT stray kids lee know and felix ALT stray kids lee know ALT Reply (0 replies) Repost or quote post Like (14 likes) Open post options menu clusterv2:54540"':
+    - link "audrey's avatar"
+    - link "View profile": ‪audrey‬
+    - link "View profile": ‪@auntlina.bsky.social‬
+    - text: ·
+    - link "April 9, 2025 at 4:33 PM": 13h
+    - text: "daily lee know theme: mood"
+    - button "stray kids lee know":
+      - img "stray kids lee know"
+    - text: ALT
+    - button "stray kids lee know":
+      - img "stray kids lee know"
+    - text: ALT
+    - button "stray kids lee know and felix":
+      - img "stray kids lee know and felix"
+    - text: ALT
+    - button "stray kids lee know":
+      - img "stray kids lee know"
+    - text: ALT
+    - button "Reply (0 replies)":
+      - img
+    - button "Repost or quote post":
+      - img
+      - text: "8"
+    - button "Like (14 likes)":
+      - img
+      - text: "14"
+    - button "Open post options menu":
+      - img
+    - text: clusterv2:54540
+  - link "SteveGrant's avatar View profileView profile · April 10, 2025 at 4:22 AM Good morning - a blue day would be good… Reply (1 reply) Repost or quote post Like (78 likes) Open post options menu t-photography":
+    - link "SteveGrant's avatar"
+    - link "View profile": ‪SteveGrant‬
+    - link "View profile": ‪@stevetg.bsky.social‬
+    - text: ·
+    - link "April 10, 2025 at 4:22 AM": 1h
+    - text: Good morning - a blue day would be good…
+    - img
+    - button "Reply (1 reply)":
+      - img
+      - text: "1"
+    - button "Repost or quote post":
+      - img
+      - text: "7"
+    - button "Like (78 likes)":
+      - img
+      - text: "78"
+    - button "Open post options menu":
+      - img
+    - text: t-photography
+  - button "New post":
+    - img
+- navigation:
+  - button "Switch accounts"
+  - link "Home"
+  - link "Explore"
+  - link "Notifications": "1"
+  - link "Chat"
+  - link "Feeds"
+  - link "Lists"
+  - link "Profile"
+  - link "Settings"
+- img
+- search "Search"
+- link "Discover"
+- link "Following"
+- link "More feeds"
+- img
+- text: Trending
+- button "Hide trending topics":
+  - img
+- link "Browse topic Survivor": Survivor
+- link "Browse topic Luka Doncic": Luka Doncic
+- link "Browse topic PSG": PSG
+- link "Browse topic Aston Villa": Aston Villa
+- link "Browse topic Murderbot": Murderbot
+- link "Browse topic Google": Google
+- link "Feedback"
+- text: •
+- link "Privacy"
+- text: •
+- link "Terms"
+- text: •
+- link "Help"
+```
+
+# Test source
+
+```ts
+   1 | import {expect, test} from '@playwright/test'
+   2 |
+   3 | test('user can search and explore content from Discover page', async ({
+   4 |   page,
+   5 | }) => {
+   6 |   //Go to site and Login
+   7 |   await page.goto('http://localhost:19006/')
+   8 |   // await page.goto('https://bsky.app/')
+   9 |   await page.getByRole('button', {name: 'Sign in'}).click()
+  10 |   await page.getByTestId('loginUsernameInput').fill('cis565bskytests@gmail.com')
+  11 |   await page.getByTestId('loginPasswordInput').click()
+  12 |   await page.getByTestId('loginPasswordInput').fill('CIS565TestGroup')
+  13 |   await page.getByTestId('loginNextButton').click()
+  14 |
+  15 |   // Expect Discover tab to be visible after login and click it
+  16 |   await expect(page.getByTestId('homeScreenFeedTabs-Discover')).toBeVisible()
+  17 |   await page.getByTestId('homeScreenFeedTabs-Discover').click()
+  18 |
+  19 |   // Search for "playwright.dev"
+  20 |   await page.getByRole('search', {name: 'Search'}).click()
+  21 |   await page.getByRole('search', {name: 'Search'}).fill('playwright.dev')
+  22 |   await page.getByRole('search', {name: 'Search'}).press('Enter')
+  23 |
+  24 |   // Expect "Top" tab to be visible in search results and click it
+  25 |   await expect(page.getByTestId('undefined-selector-0').getByText('Top'))
+  26 |     .toBeVisible
+  27 |   await page.getByTestId('undefined-selector-0').getByText('Top').click()
+  28 |
+  29 |   // Click on the first result (assuming it's a post)
+  30 |   const firstResult = page
+  31 |     .getByTestId('undefined-selector-0')
+  32 |     .locator('div')
+  33 |     .first()
+  34 |   await expect(firstResult).toBeVisible()
+  35 |   await firstResult.click()
+  36 |
+  37 |   //Go back Home and tap Trending
+  38 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+  39 |   await page.getByText('Trending').click()
+  40 |
+  41 |   //Go back Home
+> 42 |   await page.getByRole('link', {name: 'Home', exact: true}).click()
+     |                                                             ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  43 | })
+  44 |
+```
