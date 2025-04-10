@@ -1,18 +1,10 @@
 name: Allure Report
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [push]
 
 jobs:
   test:
-    timeout-minutes: 30
     runs-on: ubuntu-latest
-
-    env:
-      CI: true
 
     steps:
       - name: Checkout code
@@ -37,16 +29,16 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          ref: main
-          path: main
+          ref: gh-page
+          path: gh-page
 
       - name: Build test report
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
-          gh_pages: main
+          gh_pages: gh-page
           allure_history: allure-history
-          allure_results: build/allure-results
+          allure_results: allure-results
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
