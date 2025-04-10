@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Allure Report
 
 on:
   push:
@@ -17,15 +17,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Restore Yarn & Playwright Cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .yarn/cache
-            node_modules
-            ~/.cache/ms-playwright
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
