@@ -29,14 +29,14 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          ref: gh-page
-          path: gh-page
+          ref: codecoverage/mercytum
+          path: codecoverage/mercytum
 
       - name: Build test report
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
-          gh_pages: gh-page
+          gh_pages: codecoverage/mercytum
           allure_history: allure-history
           allure_results: allure-results
 
